@@ -32,7 +32,7 @@
       "labels" : {
         "app" : "k1",
         "version" : "1.0-SNAPSHOT",
-        "group" : "snellocms/snello-k1"
+        "group" : "snellocms/snello-k1:latest"
       },
       "name" : "k1"
     },
@@ -42,7 +42,7 @@
         "matchLabels" : {
           "app" : "k1",
           "version" : "1.0-SNAPSHOT",
-          "group" : "snellocms/snello-k1"
+          "group" : "snellocms/snello-k1:latest"
         }
       },
       "template" : {
@@ -50,7 +50,7 @@
           "labels" : {
             "app" : "k1",
             "version" : "1.0-SNAPSHOT",
-            "group" : "snellocms/snello-k1"
+            "group" : "snellocms/snello-k1:latest"
           }
         },
         "spec" : {
@@ -63,7 +63,7 @@
                 }
               }
             } ],
-            "image" : "fiorenzo/k1:1.0-SNAPSHOT",
+            "image" : "snellocms/snello-k1:latest",
             "imagePullPolicy" : "IfNotPresent",
             "name" : "k1",
             "ports" : [ {
