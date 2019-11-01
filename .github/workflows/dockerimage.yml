@@ -19,6 +19,8 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
     - run: |
+        ls -lah .
+        ls -lah target
         docker build -f src/main/docker/Dockerfile.jvm -t snellocms/snello-k1:${{ github.sha }} .
         docker push snellocms/snello-k1:${{ github.sha }}
       
