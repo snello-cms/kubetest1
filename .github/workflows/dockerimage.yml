@@ -18,6 +18,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
         docker build -f src/main/docker/Dockerfile.native -t snellocms/snello-k1:${{ github.sha }} .
+        docker tag snellocms/snello-k1 snellocms/snello-k1:latest
         docker push snellocms/snello-k1:${{ github.sha }}
         docker push snellocms/snello-k1:latest
     - uses: Azure/k8s-set-context@v1
