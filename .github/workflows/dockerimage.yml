@@ -21,7 +21,7 @@ jobs:
     - run: |
         ls -lah .
         ls -lah target
-        docker build -f src/main/docker/Dockerfile.jvm -t snellocms/snello-k1:${{ github.sha }} .
+        docker build -f src/main/docker/Dockerfile.native -t snellocms/snello-k1:${{ github.sha }} .
         docker push snellocms/snello-k1:${{ github.sha }}
       
     - uses: Azure/k8s-set-context@v1
