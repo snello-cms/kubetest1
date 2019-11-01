@@ -17,7 +17,8 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build -f src/main/docker/Dockerfile.native -t snellocms/snello-k1:${{ github.sha }} .
+        docker build -f src/main/docker/Dockerfile.native -t snellocms/snello-k1 .
+        docker tag snellocms/snello-k1 snellocms/snello-k1:${{ github.sha }}
         docker tag snellocms/snello-k1 snellocms/snello-k1:latest
         docker push snellocms/snello-k1:${{ github.sha }}
         docker push snellocms/snello-k1:latest
