@@ -4,15 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
        java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml -Pnative -Dquarkus.native.container-runtime=docker
-    - uses: actions/checkout@master
-    
+  
     - uses: Azure/docker-login@v1
       with:
         login-server: index.docker.io
