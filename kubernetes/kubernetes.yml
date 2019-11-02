@@ -36,9 +36,11 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: snello-k1
+  namespace: snello
   annotations:
     kubernetes.io/ingress.class: traefik
     traefik.frontend.rule.type: PathPrefixStrip
+    traefik.enable: true
 spec:
   rules:
     - host: k8.flw.ovh
