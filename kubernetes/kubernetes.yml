@@ -38,6 +38,7 @@ metadata:
   name: snello-k1
   annotations:
     kubernetes.io/ingress.class: traefik
+    traefik.frontend.rule.type: PathPrefixStrip
 spec:
   rules:
     - host: k8.flw.ovh
