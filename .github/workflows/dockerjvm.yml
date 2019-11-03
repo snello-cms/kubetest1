@@ -38,6 +38,6 @@ jobs:
         manifests: |
           kubernetes/kubernetes.yml
         images: |
-          snellocms/snello-k1:${{ github.sha }}
+          snellocms/snello-k1-jvm${{ github.sha }}
         imagepullsecrets: |
           demo-k8s-secret
