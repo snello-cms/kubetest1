@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: snello-k1
+  name: snello-k1-bis
   labels:
-    app: snello-k1
+    app: snello-k1-bis
 spec:
   type: LoadBalancer
   ports:
@@ -12,26 +12,26 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: snello-k1
+    app: snello-k1-bis
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: snello-k1-deployment
+  name: snello-k1-bis-deployment
   labels:
-    app: snello-k1
+    app: snello-k1-bis
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: snello-k1
+      app: snello-k1-bis
   template:
     metadata:
       labels:
-        app: snello-k1
+        app: snello-k1-bis
     spec:
       containers:
-        - name: snello-k1
+        - name: snello-k1-bis
           image: snellocms/snello-k1
           ports:
             - containerPort: 8080

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snello-all-in-one-deployment
+  labels:
+    app: snello-all-in-one
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snello-all-in-one
+  template:
+    metadata:
+      labels:
+        app: snello-all-in-one
+    spec:
+      containers:
+        - name: snello-k1
+          image: snellocms/snello-all-in-one
+          ports:
+            - containerPort: 8080
