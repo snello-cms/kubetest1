@@ -17,7 +17,7 @@ public class GreetingResource {
 
 
     @ConfigProperty(name = "udp.port", defaultValue = "4445")
-    int port;
+    public int port;
 
     private EchoServer echoServer;
 

@@ -20,7 +20,7 @@ jobs:
         docker build -f src/main/docker/Dockerfile.jvm -t snellocms/snello-k1-jvm .
         docker tag snellocms/snello-k1-jvm snellocms/snello-k1-jvm:${{ github.sha }}
         docker tag snellocms/snello-k1-jvm snellocms/snello-k1-jvm:latest
-        docker push snellocms/snello-k1:${{ github.sha }}
+        docker push snellocms/snello-k1-jvm:${{ github.sha }}
         docker push snellocms/snello-k1-jvm:latest
     - uses: Azure/k8s-set-context@v1
       with:
